@@ -16,6 +16,12 @@ public class OSXStartup extends AbstractStartup {
 	
 	@Override
 	public void install() throws Exception {
+		if (!getLaunchAgentsDir().exists()) {
+			getLaunchAgentsDir().mkdirs();
+		}
+		
+		File file = new File(getLaunchAgentsDir(), super.name + ".plist");
+		
 		
 	}
 
