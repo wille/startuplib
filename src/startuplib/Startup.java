@@ -4,7 +4,7 @@ import com.redpois0n.oslib.AbstractOperatingSystem;
 import com.redpois0n.oslib.OperatingSystem;
 
 public class Startup {
-	
+
 	public static void install() {
 		AbstractOperatingSystem os = OperatingSystem.getOperatingSystem();
 		
