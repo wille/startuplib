@@ -4,6 +4,10 @@ import java.io.File;
 
 public class OSXStartup extends AbstractStartup {
 
+	public OSXStartup(String name, String path) {
+		super(name, path);
+	}
+
 	public static File getLaunchAgentsDir() {
 		String home = System.getProperty("user.home");
 		
