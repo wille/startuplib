@@ -5,7 +5,7 @@ import com.redpois0n.oslib.OperatingSystem;
 
 public class Startup {
 
-	public static void install(String name, String path) {
+	public static void install(String name, String path) throws Exception {
 		AbstractOperatingSystem os = OperatingSystem.getOperatingSystem();
 		
 		AbstractStartup startup;

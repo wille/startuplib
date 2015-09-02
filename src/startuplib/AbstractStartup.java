@@ -10,7 +10,7 @@ public abstract class AbstractStartup {
 		this.path = path;
 	}
 	
-	public abstract void install();
+	public abstract void install() throws Exception;
 	
 	public String getName() {
 		return this.name;

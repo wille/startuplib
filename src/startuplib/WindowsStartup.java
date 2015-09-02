@@ -7,7 +7,7 @@ public class WindowsStartup extends AbstractStartup {
 	}
 
 	@Override
-	public void install() {
+	public void install() throws Exception {
 		
 	}
 
