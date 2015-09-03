@@ -8,8 +8,12 @@ public class OSXStartup extends AbstractStartup {
 		super(name, path);
 	}
 
-	public static File getLaunchAgentsDir() {
+	public static File getLaunchAgentsDir() throws Exception {
 		String home = System.getProperty("user.home");
+		
+		if (Utils.isRoot()) {
+			home = "/System/";
+		}
 		
 		return new File(home + "/Library/LaunchAgents/");
 	}
