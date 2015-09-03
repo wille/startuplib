@@ -2,9 +2,9 @@ package startuplib;
 
 import java.io.File;
 
-public class UnixStartup extends AbstractStartup {
+public class UnixXDGStartup extends AbstractStartup {
 
-	public UnixStartup(String name, String path) {
+	public UnixXDGStartup(String name, String path) {
 		super(name, path);
 	}
 

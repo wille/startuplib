@@ -54,7 +54,7 @@ public class Startup {
 		} else if (os.getType() == OperatingSystem.OSX) {
 			startup = new OSXStartup(name, path);
 		} else if (os.isUnix()) {
-			startup = new UnixStartup(name, path);
+			startup = new UnixXDGStartup(name, path);
 		} else {
 			throw new RuntimeException("Unknown operating system " + os.getDetailedString());
 		}
