@@ -1,5 +1,6 @@
 package startuplib;
 
+import java.awt.GraphicsEnvironment;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
@@ -14,5 +15,9 @@ public class Utils {
 	
 	public static boolean isRoot() throws Exception {
 		return OperatingSystem.getOperatingSystem().getType() != OperatingSystem.WINDOWS && new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec("whoami").getInputStream())).readLine().equals("root");
+	}
+	
+	public static boolean isHeadless() {
+		return GraphicsEnvironment.getLocalGraphicsEnvironment().isHeadlessInstance();
 	}
 }

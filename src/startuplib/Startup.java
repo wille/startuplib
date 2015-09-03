@@ -5,7 +5,7 @@ import java.io.File;
 import com.redpois0n.oslib.AbstractOperatingSystem;
 import com.redpois0n.oslib.OperatingSystem;
 
-public class Startup {
+public final class Startup {
 	
 	/**
 	 * Adds current JAR to startup with filename as name
@@ -53,8 +53,10 @@ public class Startup {
 			startup = new WindowsStartup(name, path);
 		} else if (os.getType() == OperatingSystem.OSX) {
 			startup = new OSXStartup(name, path);
-		} else if (os.isUnix()) {
+		} else if (os.isUnix() && !Utils.isHeadless()) {
 			startup = new UnixXDGStartup(name, path);
+		} else if (os.isUnix()) {
+			startup = new HeadlessStartup(name, path);
 		} else {
 			throw new RuntimeException("Unknown operating system " + os.getDetailedString());
 		}
