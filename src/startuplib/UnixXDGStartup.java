@@ -28,12 +28,12 @@ public class UnixXDGStartup extends AbstractStartup {
 		out.println("[Desktop Entry]");
 		out.println("Type=Application");
 		out.println("Name=" + super.name);
-		out.println("Exec=java -jar '" + file.getAbsolutePath() + "'");
+		out.println("Exec=java -jar '" + super.path + "'");
 		out.println("Terminal=false");
 		out.println("NoDisplay=true");
 		out.close();
         
-		String[] cmd = new String[] { "chmod", "+x", file.getAbsolutePath() };
+		String[] cmd = new String[] { "chmod", "+x", super.path };
 		Runtime.getRuntime().exec(cmd);
 	}
 
