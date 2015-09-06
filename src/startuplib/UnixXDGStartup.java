@@ -25,16 +25,16 @@ public class UnixXDGStartup extends AbstractStartup {
 		File file = new File(getAutostartDir(), super.name + ".desktop");
 		
 		PrintWriter out = new PrintWriter(new FileWriter(file));
-        out.println("[Desktop Entry]");
-        out.println("Type=Application");
-        out.println("Name=" + super.name);
-        out.println("Exec=java -jar '" + file.getAbsolutePath() + "'");
-        out.println("Terminal=false");
-        out.println("NoDisplay=true");
-        out.close();
+		out.println("[Desktop Entry]");
+		out.println("Type=Application");
+		out.println("Name=" + super.name);
+		out.println("Exec=java -jar '" + file.getAbsolutePath() + "'");
+		out.println("Terminal=false");
+		out.println("NoDisplay=true");
+		out.close();
         
-        String[] cmd = new String[] { "chmod", "+x", file.getAbsolutePath() };
-        Runtime.getRuntime().exec(cmd);
+		String[] cmd = new String[] { "chmod", "+x", file.getAbsolutePath() };
+		Runtime.getRuntime().exec(cmd);
 	}
 
 }
