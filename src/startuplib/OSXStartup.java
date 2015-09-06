@@ -37,7 +37,7 @@ public class OSXStartup extends AbstractStartup {
 		out.println("\t<array>");
 		out.println("\t\t<string>java</string>");
 		out.println("\t\t<string>-jar</string>");
-		out.println("\t\t<string>" + file.getAbsolutePath() + "</string>");
+		out.println("\t\t<string>" + super.path + "</string>");
 		out.println("\t</array>");
 		out.println("\t<key>RunAtLoad</key>");
 		out.println("\t<true/>");
