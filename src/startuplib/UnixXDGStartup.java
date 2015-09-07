@@ -9,6 +9,10 @@ public class UnixXDGStartup extends AbstractStartup {
 	public UnixXDGStartup(String name, String path) {
 		super(name, path);
 	}
+	
+	public UnixXDGStartup(String name, String path, boolean jar) {
+		super(name, path, jar);
+	}
 
 	public static File getAutostartDir() {
 		String home = System.getProperty("user.home");
@@ -28,7 +32,11 @@ public class UnixXDGStartup extends AbstractStartup {
 		out.println("[Desktop Entry]");
 		out.println("Type=Application");
 		out.println("Name=" + super.name);
-		out.println("Exec=java -jar '" + super.path + "'");
+		if (jar) {
+			out.println("Exec=java -jar '" + super.path + "'");
+		} else {
+			out.println("Exec=" + super.path);
+		}
 		out.println("Terminal=false");
 		out.println("NoDisplay=true");
 		out.close();

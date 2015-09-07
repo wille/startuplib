@@ -6,12 +6,22 @@ public class WindowsStartup extends AbstractStartup {
 		super(name, path);
 	}
 
+	public WindowsStartup(String name, String path, boolean jar) {
+		super(name, path, jar);
+	}
+
 	@Override
 	public void install() throws Exception {
-		String javaHome = System.getProperty("java.home") + "\\bin\\javaw.exe";
-		String data = javaHome + " -jar \"" + path + "\"";
+		String data;
 
-		Runtime.getRuntime().exec(new String[] { "reg", "add", "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\", "/v", name, "/t", "REG_SZ", "/d", data, "/f" });
+		if (jar) {
+			String javaHome = System.getProperty("java.home") + "\\bin\\javaw.exe";
+			data = javaHome + " -jar \"" + path + "\"";
+		} else {
+			data = super.path;
+		}
+
+		Runtime.getRuntime().exec(new String[] { "reg", "add", "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\", "/v", super.name, "/t", "REG_SZ", "/d", data, "/f" });
 	}
 
 }

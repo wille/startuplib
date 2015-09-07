@@ -25,7 +25,7 @@ public final class Startup {
 	public static void add(String name) throws Exception {
 		File file = Utils.getJarFile();
 		
-		add(name, file.getAbsolutePath());
+		add(name, file.getAbsolutePath(), true);
 	}
 
 	/**
@@ -38,25 +38,30 @@ public final class Startup {
 		add(name, file.getAbsolutePath());
 	}
 	
+	public static void add(String name, String path) throws Exception {
+		add(name, path, false);
+	}
+	
 	/**
 	 * Add file to startup
 	 * @param name Name of key/file
 	 * @param path Path to file
+	 * @param jar If file should be executed by the JVM
 	 * @throws Exception
 	 */
-	public static void add(String name, String path) throws Exception {
+	public static void add(String name, String path, boolean jar) throws Exception {
 		AbstractOperatingSystem os = OperatingSystem.getOperatingSystem();
 		
 		AbstractStartup startup;
 		
 		if (os.getType() == OperatingSystem.WINDOWS) {
-			startup = new WindowsStartup(name, path);
+			startup = new WindowsStartup(name, path, jar);
 		} else if (os.getType() == OperatingSystem.OSX) {
-			startup = new OSXStartup(name, path);
+			startup = new OSXStartup(name, path, jar);
 		} else if (os.isUnix() && !Utils.isHeadless()) {
-			startup = new UnixXDGStartup(name, path);
+			startup = new UnixXDGStartup(name, path, jar);
 		} else if (os.isUnix()) {
-			startup = new HeadlessStartup(name, path);
+			startup = new HeadlessStartup(name, path, jar);
 		} else {
 			throw new RuntimeException("Unknown operating system " + os.getDetailedString());
 		}
