@@ -18,7 +18,7 @@ Writes [desktop entry](https://wiki.archlinux.org/index.php/Desktop_entries) to 
 
 ### Headless *nix systems
 
-None yet
+Refer to [linux-install](https://github.com/redpois0n/linux-install)
 
 ## Dependencies
 
