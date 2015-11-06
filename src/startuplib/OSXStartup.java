@@ -18,7 +18,7 @@ public class OSXStartup extends AbstractStartup {
 		String home = System.getProperty("user.home");
 
 		if (Utils.isRoot()) {
-			home = "/System/";
+			home = "";
 		}
 
 		return new File(home + "/Library/LaunchAgents/");
