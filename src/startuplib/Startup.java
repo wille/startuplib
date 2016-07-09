@@ -2,8 +2,8 @@ package startuplib;
 
 import java.io.File;
 
-import com.redpois0n.oslib.AbstractOperatingSystem;
-import com.redpois0n.oslib.OperatingSystem;
+import oslib.AbstractOperatingSystem;
+import oslib.OperatingSystem;
 
 public final class Startup {
 	

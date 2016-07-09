@@ -5,7 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 
-import com.redpois0n.oslib.OperatingSystem;
+import oslib.OperatingSystem;
 
 public class Utils {
 	
