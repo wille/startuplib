@@ -8,7 +8,7 @@ Library for adding your Java application to startup on many different operating 
 
 Writes registry key to ```HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run```
 
-### OS X
+### macOS
 
 Writes [launch agent](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html) to ```~/Library/LaunchAgents/```
 
