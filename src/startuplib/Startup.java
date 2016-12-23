@@ -56,8 +56,8 @@ public final class Startup {
 		
 		if (os.getType() == OperatingSystem.WINDOWS) {
 			startup = new WindowsStartup(name, path, jar);
-		} else if (os.getType() == OperatingSystem.OSX) {
-			startup = new OSXStartup(name, path, jar);
+		} else if (os.getType() == OperatingSystem.MACOS) {
+			startup = new MacOSStartup(name, path, jar);
 		} else if (os.isUnix() && !Utils.isHeadless()) {
 			startup = new UnixXDGStartup(name, path, jar);
 		} else if (os.isUnix()) {

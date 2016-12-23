@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
-public class OSXStartup extends AbstractStartup {
+public class MacOSStartup extends AbstractStartup {
 
-	public OSXStartup(String name, String path) {
+	public MacOSStartup(String name, String path) {
 		super(name, path);
 	}
 	
-	public OSXStartup(String name, String path, boolean jar) {
+	public MacOSStartup(String name, String path, boolean jar) {
 		super(name, path, jar);
 	}
 
